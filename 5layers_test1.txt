@@ -91,3 +91,26 @@ Epoch: 0390 cost = 1.196452970
 Optimization step finished
 Accuracy: 0.8743
 
+------------------------------------------------------------------------------------
+
+Epoch: 0000 cost = 298546.009108665
+Epoch: 0010 cost = 4597.031641402
+Optimization with sigmoid fn finished
+Accuracy with sigmoid: 0.8362
+Epoch: 0000 cost = 41388.128722923
+Epoch: 0010 cost = 646.342341614
+Optimization with softmax fn finished
+Accuracy with softmax: 0.8689
+
+learning_rate = 0.01
+training_epochs = 20
+batch_size = 100
+display_step = 10
+
+hidden_layer_1 = 512
+hidden_layer_2 = 256
+hidden_layer_3 = 256
+hidden_layer_4 = 128
+hidden_layer_5 = 64
+input_layer = 784
+output_classes = 10

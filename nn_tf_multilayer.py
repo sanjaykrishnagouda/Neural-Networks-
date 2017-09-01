@@ -24,17 +24,17 @@ mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 
 hidden_layer_1 = 512
 hidden_layer_2 = 256
-hidden_layer_3 = 256
-hidden_layer_4 = 128
-hidden_layer_5 = 64
+hidden_layer_3 = 128
+hidden_layer_4 = 64
+hidden_layer_5 = 32
 input_layer = 784
 output_classes = 10
 
 # parameters for gradient descent
 # already optimized. Tested a lot of permutations
 
-learning_rate = 0.001
-training_epochs = 400
+learning_rate = 0.01
+training_epochs = 30
 batch_size = 100
 display_step = 10
 
@@ -88,8 +88,8 @@ logits = nn(X)
 #	sparse softmax or 
 #	weighted cross entropy
 
-#ce_loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=Y))
-ce_loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits = logits, labels = Y))
+ce_loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=Y))
+#ce_loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits = logits, labels = Y))
 
 #optimizer = tf.train.GradientDescentOptimizer(learning_rate = learning_rate).minimize(ce_loss)
 optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate)
@@ -113,8 +113,8 @@ with tf.Session() as sess:
 				Y: batch_ys})
 			avg_cost += c / total_batch
 			
-		#if epoch%display_step == 0:
-			#print("Epoch:", '%04d'%(epoch), "cost = {:.9f}".format(avg_cost))
+		if epoch%display_step == 0:
+			print("Epoch:", '%04d'%(epoch), "cost = {:.9f}".format(avg_cost))
 	print("Optimization with sigmoid fn finished")
 	pred = tf.nn.softmax(logits)
 	correct_pred = tf.equal(tf.argmax(pred,1), tf.argmax(Y,1))
@@ -122,7 +122,8 @@ with tf.Session() as sess:
 	accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
 	print("Accuracy with sigmoid:",accuracy.eval({X: mnist.test.images, Y: mnist.test.labels}))
 
-
+ce_loss_2 = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits = logits, labels = Y))
+train2 = optimizer.minimize(ce_loss_2)
 with tf.Session() as sess_2:
 	sess_2.run(init)
 
@@ -133,9 +134,11 @@ with tf.Session() as sess_2:
 		for i in range(total_batch):
 			batch_xs, batch_ys = mnist.train.next_batch(batch_size)
 
-			el, c = sess_2.run([train,ce_loss], feed_dict = {X: batch_xs,
+			el, c = sess_2.run([train2,ce_loss_2], feed_dict = {X: batch_xs,
 				Y: batch_ys})
 			avg_cost += c / total_batch
+		if epoch%display_step == 0:
+			print("Epoch:", '%04d'%(epoch), "cost = {:.9f}".format(avg_cost))
 		
 	print("Optimization with softmax fn finished")
 
