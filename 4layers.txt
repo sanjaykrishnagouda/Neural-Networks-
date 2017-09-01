@@ -1,0 +1,33 @@
+(C:\ProgramData\Anaconda3) M:\Course stuff\Machine Learning\projects\Data Sets\MNIST>python nn_tf_multilayer.py
+Extracting MNIST_data/train-images-idx3-ubyte.gz
+Extracting MNIST_data/train-labels-idx1-ubyte.gz
+Extracting MNIST_data/t10k-images-idx3-ubyte.gz
+Extracting MNIST_data/t10k-labels-idx1-ubyte.gz
+2017-09-01 22:58:41.783109: W C:\tf_jenkins\home\workspace\rel-win\M\windows\PY\36\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-09-01 22:58:41.783259: W C:\tf_jenkins\home\workspace\rel-win\M\windows\PY\36\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+Epoch: 0001 cost = 25147.075904792
+Epoch: 0006 cost = 309.599529197
+Epoch: 0011 cost = 103.260124068
+Epoch: 0016 cost = 40.488509646
+Epoch: 0021 cost = 17.035032610
+Epoch: 0026 cost = 8.392071867
+Epoch: 0031 cost = 4.329459305
+Epoch: 0036 cost = 2.142549837
+Epoch: 0041 cost = 15546.613520952
+Epoch: 0046 cost = 4851.538729581
+Optimization step finished
+Accuracy: 0.8425
+
+(C:\ProgramData\Anaconda3) M:\Course stuff\Machine Learning\projects\Data Sets\MNIST>python nn_tf_multilayer.py
+Extracting MNIST_data/train-images-idx3-ubyte.gz
+Extracting MNIST_data/train-labels-idx1-ubyte.gz
+Extracting MNIST_data/t10k-images-idx3-ubyte.gz
+Extracting MNIST_data/t10k-labels-idx1-ubyte.gz
+2017-09-01 23:06:35.714605: W C:\tf_jenkins\home\workspace\rel-win\M\windows\PY\36\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-09-01 23:06:35.714731: W C:\tf_jenkins\home\workspace\rel-win\M\windows\PY\36\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+Epoch: 0000 cost = 33749.857754974
+Epoch: 0010 cost = 176.887165902
+Epoch: 0020 cost = 40.864497965
+Epoch: 0030 cost = 9.060653435
+Optimization step finished
+Accuracy: 0.8811

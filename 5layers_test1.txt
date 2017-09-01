@@ -1,0 +1,93 @@
+
+(C:\ProgramData\Anaconda3) C:\Users\gsk69>m:
+
+(C:\ProgramData\Anaconda3) M:\>cd "Course stuff\Machine Learning\projects\Data Sets\MNIST"
+
+(C:\ProgramData\Anaconda3) M:\Course stuff\Machine Learning\projects\Data Sets\MNIST>dir
+ Volume in drive M is New Volume
+ Volume Serial Number is 2E99-0F6D
+
+ Directory of M:\Course stuff\Machine Learning\projects\Data Sets\MNIST
+
+01/09/2017  23:14    <DIR>          .
+01/09/2017  23:14    <DIR>          ..
+20/08/2017  01:21    <DIR>          .idea
+01/09/2017  23:14             2,288 4layers.txt
+26/08/2017  02:10               772 activations.py
+01/09/2017  19:17             1,314 init.py
+20/08/2017  01:07    <DIR>          MNIST_data
+01/09/2017  19:17             5,271 nn.py
+02/09/2017  00:01             3,826 nn_tf_multilayer.py
+18/08/2017  23:00    <DIR>          original data
+26/01/1998  20:37         7,840,016 t10k-images.idx3-ubyte
+26/01/1998  20:37            10,008 t10k-labels.idx1-ubyte
+01/09/2017  19:41             1,519 tf_init.py
+18/11/1996  21:06        47,040,016 train-images.idx3-ubyte
+18/11/1996  21:06            60,008 train-labels.idx1-ubyte
+01/09/2017  19:15    <DIR>          __pycache__
+              10 File(s)     54,965,038 bytes
+               6 Dir(s)  110,281,089,024 bytes free
+
+(C:\ProgramData\Anaconda3) M:\Course stuff\Machine Learning\projects\Data Sets\MNIST>python nn_tf_multilayer.py
+Extracting MNIST_data/train-images-idx3-ubyte.gz
+Extracting MNIST_data/train-labels-idx1-ubyte.gz
+Extracting MNIST_data/t10k-images-idx3-ubyte.gz
+Extracting MNIST_data/t10k-labels-idx1-ubyte.gz
+2017-09-02 00:04:30.086479: W C:\tf_jenkins\home\workspace\rel-win\M\windows\PY\36\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-09-02 00:04:30.086588: W C:\tf_jenkins\home\workspace\rel-win\M\windows\PY\36\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+Epoch: 0000 cost = 78852.216048917
+Epoch: 0005 cost = 2878.648106578
+Epoch: 0010 cost = 2.677522195
+Epoch: 0385 cost = 1.286486483
+Epoch: 0390 cost = 1.042780429
+Epoch: 0395 cost = 0.758942594
+Optimization step finished
+Accuracy: 0.8073
+
+(C:\ProgramData\Anaconda3) M:\Course stuff\Machine Learning\projects\Data Sets\MNIST>
+
+
+
+
+Settings : 
+
+hidden_layer_1 = 256
+hidden_layer_2 = 256
+hidden_layer_3 = 256
+hidden_layer_4 = 256
+hidden_layer_5 = 256
+input_layer = 784
+output_classes = 10
+
+# parameters for gradient descent
+# already optimized. Tested a lot of permutations
+
+learning_rate = 0.01
+training_epochs = 400
+batch_size = 50
+display_step = 5
+
+-----------------------------------------------------------------------------------------------------
+
+hidden_layer_1 = 512
+hidden_layer_2 = 256
+hidden_layer_3 = 256
+hidden_layer_4 = 128
+hidden_layer_5 = 64
+input_layer = 784
+output_classes = 10
+
+learning_rate = 0.001
+training_epochs = 400
+batch_size = 100
+display_step = 10
+
+ce_loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits = logits, labels = Y))
+
+Epoch: 0360 cost = 1.872296475
+Epoch: 0370 cost = 1.868405762
+Epoch: 0380 cost = 2.388295011
+Epoch: 0390 cost = 1.196452970
+Optimization step finished
+Accuracy: 0.8743
+
