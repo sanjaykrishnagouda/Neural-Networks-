@@ -1,5 +1,7 @@
 # Neural-Networks-
 
+For the file 'nn_tf_multilayer.py'
+
 Using tensorflow, applied various neural network architectures on MNIST data to perform multiclass classification. 
 Some results included in text files. 
 This code was compiled and tested on python 3.6 64bit (anaconda3) on windows 10. To run, simply call python filename.py.
