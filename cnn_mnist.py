@@ -80,19 +80,19 @@ def main(_):
 
 
 	#optimizer = tf.train.GradientDescentOptimizer(learning_rate = learning_rate).minimize(ce_loss)
-	optimizer = tf.train.AdamOptimizer(learning_rate=1e-4)
-	train = optimizer.minimize(ce_loss)
+	train_step = tf.train.AdamOptimizer(learning_rate=1e-4).minimize(ce_loss)
 	correct_prediction = tf.equal(tf.argmax(y_conv, 1), tf.argmax(y_, 1))
 	accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
-
-	with tf.Session() as sess:
-		sess.run(tf.global_variables_initializer())
-		for i in range(2000):
-			batch = mnist.train.next_batch(50)
-			if i%100 == 0:
-				train_accuracy = accuracy.eval(feed_dict={x: batch[0], y_: batch[1], keep_prob: 1.0})
-				print('step %d, training accuracy %g' % (i, train_accuracy))
-			train.run(feed_dict={x: batch[0], y_: batch[1], keep_prob: 0.5})
+	sess = tf.InteractiveSession()
+	
+	sess.run(tf.global_variables_initializer())
+	for i in range(2000):
+		batch = mnist.train.next_batch(50)
+		if i%100 == 0:
+			train_accuracy = accuracy.eval(feed_dict={x: batch[0], y_: batch[1], keep_prob: 1.0})
+			print('step %d, training accuracy %g' % (i, train_accuracy))
+		train_step.run(feed_dict={x: batch[0], y_: batch[1], keep_prob: 0.5})
 
 	print('test accuracy %g' % accuracy.eval(feed_dict={x: mnist.test.images, y_: mnist.test.labels, keep_prob: 1.0}))
-tf.app.run(main = main)
+a = None
+main(a)
