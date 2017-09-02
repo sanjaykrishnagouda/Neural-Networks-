@@ -114,3 +114,13 @@ hidden_layer_4 = 128
 hidden_layer_5 = 64
 input_layer = 784
 output_classes = 10
+
+--------------------------------------------------------------------
+hidden_layer_1 = 15
+hidden_layer_2 = 15
+hidden_layer_3 = 15
+hidden_layer_4 = 15
+hidden_layer_5 = 15
+
+sofmax accuracy = 0.9004
+sigmoid accuracy = 0.8986
